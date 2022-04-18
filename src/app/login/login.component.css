@@ -1,0 +1,11 @@
+.container {
+    min-height: 100vh;
+}
+
+form {
+    min-width: min(95%, 600px);
+    padding: 2rem;
+    text-align: center;
+    background-color: lightblue;
+    border-radius: 1rem;
+}
