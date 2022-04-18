@@ -9,6 +9,9 @@ import { LogoutComponent } from './logout/logout.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { FormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
+import { UsersService } from './users/users.service';
+// Importamos el HttpClientModule para que no haya problemas con nuestro servicio
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,9 +25,11 @@ import { RegisterComponent } from './register/register.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  // Importamos el servicio 'UsersService'
+  providers: [UsersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

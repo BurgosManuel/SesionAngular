@@ -2,7 +2,7 @@
     <form method="POST">
       <fieldset>
         <h1>Ingreso de Usuario</h1>
-        <input [(ngModel)]="usuario" type="text" name="usuario" class="form-control mt-3" placeholder="Usuario" required autocomplete="off">
+        <input [(ngModel)]="email" type="email" name="email" class="form-control mt-3" placeholder="Email" required autocomplete="off">
         <input [(ngModel)]="password" type="password" name="password" class="form-control mt-3" placeholder="Contraseña" required autocomplete="off">
         <button type="submit" (click)="login()" class="btn btn-primary mt-3">Ingresar</button>
       </fieldset>
