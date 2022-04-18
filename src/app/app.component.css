@@ -1,0 +1,17 @@
+.container {
+    min-height: 100vh;
+}
+
+.flex-center-all {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    min-width: min(95%, 600px);
+    padding: 2rem;
+    text-align: center;
+    background-color: lightblue;
+    border-radius: 1rem;
+}
