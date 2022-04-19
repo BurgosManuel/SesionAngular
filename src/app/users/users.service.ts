@@ -18,13 +18,4 @@ export class UsersService {
   register(user:any): Observable<any> {
     return this.http.post('https://reqres.in/api/register', user);
   }
-
-  // Creamos los getters y setters para almacenar y obtener el token desde y hacia el LOCAL STORAGE.
-  setToken(token: string) {
-    localStorage.setItem('Token', token);
-  }
-
-  getToken() {
-    return localStorage.getItem('Token')
-  }
 }

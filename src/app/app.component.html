@@ -2,11 +2,11 @@
   <div class="row mb-3">
     <ul class="nav nav-tabs">
       <!-- Agregamos directivas estructurales *ngIf, para mostrar elementos únicamente si el usuario está logeado. -->
-      <li class="nav-item"><a class="nav-link" routerLink="/inicio" routerLinkActive="active" *ngIf="!activeToken()">Inicio</a></li>
-      <li class="nav-item"><a class="nav-link" routerLink="/login" routerLinkActive="active" *ngIf="!activeToken()">Login</a></li>
-      <li class="nav-item"><a class="nav-link" routerLink="/registro" routerLinkActive="active" *ngIf="!activeToken()">Registro</a></li>
-      <li class="nav-item"><a class="nav-link" routerLink="/perfil" routerLinkActive="active" *ngIf="activeToken()">Perfil</a></li>
-      <li class="nav-item"><a class="nav-link" routerLink="/logout" routerLinkActive="active" *ngIf="activeToken()" (click)="deleteToken()">Cerrar Sesión</a></li>
+      <li class="nav-item"><a class="nav-link" routerLink="/inicio" routerLinkActive="active">Inicio</a></li>
+      <li class="nav-item"><a class="nav-link" routerLink="/login" routerLinkActive="active">Login</a></li>
+      <li class="nav-item"><a class="nav-link" routerLink="/registro" routerLinkActive="active">Registro</a></li>
+      <li class="nav-item"><a class="nav-link" routerLink="/perfil" routerLinkActive="active">Perfil</a></li>
+      <li class="nav-item"><a class="nav-link" routerLink="/logout" routerLinkActive="active">Cerrar Sesión</a></li>
     </ul>
   </div>
   <div class="row">

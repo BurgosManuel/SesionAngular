@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,15 +6,4 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  
-  constructor(public router: Router) {}
-  activeToken(){
-    return localStorage.getItem('Token');
-  }
-  deleteToken(){
-    if (this.activeToken()) {
-      localStorage.removeItem('Token');
-      this.router.navigateByUrl('/inicio');
-    }
-  }
 }

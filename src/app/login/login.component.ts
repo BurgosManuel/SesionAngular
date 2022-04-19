@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from '../users/users.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +11,7 @@ export class LoginComponent implements OnInit {
   password: string = '';
 
   // Inyectamos el servicio de emails (UsersService)
-  constructor(public userService: UsersService, public router: Router) {}
+  constructor(public userService: UsersService) {}
 
   login() {
     // Creamos un objeto que contiene los datos del email. IMPORTANTE, los datos de los parametros deben ser 'email' y 'password', caso contrario la API lanzará error.
@@ -20,11 +19,9 @@ export class LoginComponent implements OnInit {
       email: this.email,
       password: this.password,
     };
-
-    // Conectamos el componente con el servicio y almacenamos el Token que nos retorna la API en el LocalStorage. Si la respuesta al registrar es positiva nos REDIRECCIONA al 'inicio'.
+    // Conectamos el componente con el servicio e imprimimos el TOKEN en la consola (data).
     this.userService.login(datosUsuario).subscribe((data) => {
-      this.userService.setToken(data.token);
-      this.router.navigateByUrl('/perfil');
+      console.log(data);
     });
   }
   ngOnInit(): void {}

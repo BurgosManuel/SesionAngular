@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from '../users/users.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -12,8 +11,7 @@ export class RegisterComponent implements OnInit {
   password = '';
   confirmarPass = '';
 
-  // Inyectamos los servicios de 'UsersService' (Nos conecta con la API) y 'Router' (para redireccionar).
-  constructor(public userService: UsersService, public router: Router) {}
+  constructor(public userService: UsersService) {}
 
   register() {
     // Creamos un objeto que contiene los datos del email. IMPORTANTE, los datos de los parametros deben ser 'email' y 'password', caso contrario la API lanzará error.
@@ -22,10 +20,9 @@ export class RegisterComponent implements OnInit {
       password: this.password,
     };
 
-    // Conectamos el componente con el servicio y almacenamos el Token que nos retorna la API en el LocalStorage. Si la respuesta al registrar es positiva nos REDIRECCIONA al 'inicio'.
-    this.userService.register(datosUsuario).subscribe(data => {
-      this.userService.setToken(data.token);
-      this.router.navigateByUrl('/perfil');
+    // Conectamos el componente con el servicio e imprimimos el TOKEN en la consola (data).
+    this.userService.register(datosUsuario).subscribe((data) => {
+      console.log(data);
     });
   }
 
